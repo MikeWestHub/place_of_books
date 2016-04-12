@@ -1,2 +1,17 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h1>Add Books</h1>
+<p>Add to the selection below</p>
+<%= form_tag("/books") do %>
+
+  <div class="form-group">
+    <%= label_tag "book[name]", "Name" %>
+    <%= text_field_tag "book[name]", nil ,  class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag "book[author_name]", "Author" %>
+    <%= text_field_tag "book[author_name]", nil ,  class: 'form-control'%>
+  </div>
+
+  <%= submit_tag nil, class: 'btn'%>
+
+<% end %>

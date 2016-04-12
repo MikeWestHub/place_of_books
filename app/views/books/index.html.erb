@@ -1,2 +1,11 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h1>Bookenstein & Sons</h1>
+<p>Check out our selection below</p>
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.name %> 
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add Books", new_path %>

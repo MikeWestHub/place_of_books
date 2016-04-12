@@ -4,6 +4,7 @@ class BooksControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
+    assert assigns(:books)
   end
 
   test "should get new" do
@@ -12,14 +13,16 @@ class BooksControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    @animals = books(:animals)
+    get :show, id: @animals.id
     assert_response :success
   end
 
   test "should get edit" do
-    skip
-    get :edit
+    @animals = books(:animals)
+    get :edit, id: @animals.id
     assert_response :success
+    assert_select "form"
   end
 
   test "should get delete" do

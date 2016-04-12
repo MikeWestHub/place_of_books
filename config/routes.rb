@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get "/books" => "books#index" #show all
-  get "/books/new" => "books#new" #show new a new book in the collection
-  get "/books/:id" => "books#show" #show current title
-  get "/books/:id/edit" => "books#edit" #edit single book
+  get "/" => "books#index", as: "home"
+  get "/books/new" => "books#new", as: "new"
+  get "/books/:id" => "books#show", as: "book"
+  get "/books/:id/edit" => "books#edit"
 
   patch "/books/:id" => "books#update"
   post "/books" => "books#create"
