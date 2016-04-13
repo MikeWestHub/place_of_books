@@ -1,19 +1,13 @@
 Rails.application.routes.draw do
-  get "/" => "books#index", as: "home"
-  get "/books/new" => "books#new", as: "new"
-  get "/books/:id" => "books#show", as: "book"
-  get "/books/:id/edit" => "books#edit", as: "edit"
+  resources :books 
 
-  patch "/books/:id" => "books#update"
-  post "/books" => "books#create"
-  delete "/books/:id" => "books#destroy"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'books#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
