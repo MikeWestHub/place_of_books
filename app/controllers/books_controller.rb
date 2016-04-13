@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(params[:book].permit!)
-    redirect_to action: "show", id: @book.id 
+    redirect_to action: "show", id: @book.id
   end
 
   def create
@@ -25,5 +25,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    Book.find(params[:id]).destroy
+    redirect_to action: "index"
   end
 end

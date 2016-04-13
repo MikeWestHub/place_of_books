@@ -32,15 +32,19 @@ class BooksControllerTest < ActionController::TestCase
   end
 
   test "should get delete" do
-    skip
-    get :delete
-    assert_response :success
+    @animals = books(:animals)
+    book_count = Book.count
+    delete :destroy, id: @animals.id
+    assert_redirected_to controller: "books", action: "index"
+    assert_equal book_count - 1, Book.count
   end
 
   test "should get create" do
-    skip
-    get :create
-    assert_response :success
+    book_count = Book.count
+    post :create, book: { name: "POODR" }
+    assert assigns(:book).valid?
+    assert_equal "POODR", assigns(:book).name
+    assert_equal book_count + 1, Book.count
   end
 
 end
