@@ -3,6 +3,8 @@ class CreateAuthors < ActiveRecord::Migration
     create_table :authors do |t|
       t.string :name
       t.string :notes
+
+      t.timestamps null: false
     end
   end
 end
