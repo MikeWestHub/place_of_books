@@ -1,19 +1,18 @@
+<%= link_to "Home", home_path %>
 <h1>Edit Record</h1>
 <p>Make Changes Below</p>
   <%= form_tag("/books/:id", method: :patch) do %>
 
     <div class="form-group">
       <%= label_tag "book[name]", "Name" %>
-      <%= text_field_tag "book[name]", nil ,  class: 'form-control'%>
+      <%= text_field_tag "book[name]", placeholder = @book.name ,  class: 'form-control'%>
     </div>
 
     <div class="form-group">
       <%= label_tag "book[author_name]", "Author" %>
-      <%= text_field_tag "book[author_name]", nil ,  class: 'form-control'%>
+      <%= text_field_tag "book[author_name]", placeholder = @book.author_name ,  class: 'form-control'%>
     </div>
 
     <%= submit_tag nil, class: 'btn'%>
-
-  <%= link_to "Home", home_path %>
 
 <% end %>
