@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "/" => "books#index", as: "home"
   get "/books/new" => "books#new", as: "new"
   get "/books/:id" => "books#show", as: "book"
-  get "/books/:id/edit" => "books#edit"
+  get "/books/:id/edit" => "books#edit", as: "edit"
 
   patch "/books/:id" => "books#update"
   post "/books" => "books#create"
