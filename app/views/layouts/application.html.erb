@@ -6,6 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header>
+  <%= link_to "Library", books_path %>
+  <%= link_to "Authors", authors_path %>  
+</header>
 <body>
 
 <%= yield %>

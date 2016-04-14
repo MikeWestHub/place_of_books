@@ -1,8 +1,7 @@
-<%= link_to "Home", books_path %>
 <h1><%= @book.name %></h1>
 <%= link_to "Edit", edit_book_path %>
 <%= link_to "Delete", @book, method: :delete %>
 <p>Title:
   <%= @book.name %></p>
 <p>Author:
-  <%= @book.id %></p>
+  <%= @book.author_id %></p>
